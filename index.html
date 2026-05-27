@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KBO 떡상픽 운영 대시보드</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🎯 KBO 떡상픽 운영 대시보드</h1>
+    <div class="updated">최근 갱신: <span id="updated">로딩 중...</span></div>
+  </header>
+
+  <main>
+    <!-- 시스템 상태 -->
+    <section class="card">
+      <h2>📊 시스템 상태</h2>
+      <div class="health-grid" id="health"></div>
+    </section>
+
+    <!-- 누적 성적 -->
+    <section class="card">
+      <h2>📈 누적 성적</h2>
+      <div class="stats-row" id="stats"></div>
+      <canvas id="hitChart" height="80"></canvas>
+    </section>
+
+    <!-- 오늘의 떡상픽 -->
+    <section class="card">
+      <h2>🎯 오늘의 떡상픽</h2>
+      <div class="pick-card" id="today-pick"></div>
+    </section>
+
+    <!-- 오늘의 풀 -->
+    <section class="card">
+      <h2>👥 오늘의 풀 <span id="pool-count"></span></h2>
+      <div class="filters" id="pool-filters">
+        <button class="active" data-filter="all">전체</button>
+        <button data-filter="user">사용자픽</button>
+        <button data-filter="auto">자동픽</button>
+        <button data-filter="new">신규</button>
+      </div>
+      <div class="pool-grid" id="pool-grid"></div>
+    </section>
+
+    <!-- 최근 7일 픽 -->
+    <section class="card">
+      <h2>📋 최근 7일 픽 + 결과</h2>
+      <table class="recent" id="recent-table">
+        <thead><tr><th>날짜</th><th>떡상픽</th><th>팀</th><th>OPS</th><th>안타</th><th>결과</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- 시스템 흐름 -->
+    <section class="card">
+      <h2>🔄 시스템 흐름</h2>
+      <div class="mermaid">
+flowchart TD
+    A[09:30 KST<br/>ops-fetch.yml] -->|fetch_ops.py| B[(ops_cache/<br/>latest.json)]
+    A -.->|풀 변경 알림| S1[💬 슬랙 운영]
+
+    B --> C[09:45 KST<br/>refresh-players.yml]
+    C -->|refresh_players.py| D[(assets/players/)]
+    C -.->|사진 픽 알림| S2[💬 슬랙 운영]
+
+    B --> E[11:00 KST<br/>Cloud Routine]
+    D --> E
+    E -->|운세+선정+게시물| F[(picks/<br/>YYYY-MM-DD.json)]
+
+    F -->|push 감지| G[slack-notify.yml]
+    G -->|gen_image.py| H[(이미지 카드<br/>kbo-dduksang-images)]
+    G -.->|카드 발송| S3[💬 슬랙 일반]
+    G -.->|봇 결과 알림| S4[💬 슬랙 운영]
+
+    style A fill:#4a90e2,color:#fff
+    style C fill:#4a90e2,color:#fff
+    style E fill:#e2854a,color:#fff
+    style G fill:#4a90e2,color:#fff
+    style S1 fill:#7c4ae2,color:#fff
+    style S2 fill:#7c4ae2,color:#fff
+    style S3 fill:#4ae27c,color:#000
+    style S4 fill:#7c4ae2,color:#fff
+      </div>
+    </section>
+
+    <!-- 파일 역할 -->
+    <section class="card">
+      <h2>📁 파일 역할</h2>
+      <details>
+        <summary>전체 보기</summary>
+        <table class="files-table">
+          <thead><tr><th>파일</th><th>역할</th><th>주체</th></tr></thead>
+          <tbody>
+            <tr><td><code>fetch_ops.py</code></td><td>풀 자동 갱신 + OPS 페치 + 이탈 reason 검색</td><td>🔵 외부</td></tr>
+            <tr><td><code>refresh_players.py</code></td><td>신규 멤버 사진 자동 픽 (face matching)</td><td>🔵 외부</td></tr>
+            <tr><td><code>gen_image.py</code></td><td>picks → 카드 이미지 생성</td><td>🔵 외부</td></tr>
+            <tr><td><code>slack_ops_report.py</code></td><td>운영 채널 알림 (풀 변경)</td><td>🔵 외부</td></tr>
+            <tr><td><code>slack_refresh_report.py</code></td><td>운영 채널 알림 (사진 픽)</td><td>🔵 외부</td></tr>
+            <tr><td><code>ops_cache/latest.json</code></td><td>오늘 풀 + OPS + diff</td><td>🔵 외부 생성</td></tr>
+            <tr><td><code>pool_snapshots/[date].json</code></td><td>일별 풀 누적 스냅샷</td><td>🔵 외부 생성</td></tr>
+            <tr><td><code>picks/[date].json</code></td><td>떡상픽 + 위험 + 게시물 산문</td><td>🟠 Routine 생성</td></tr>
+            <tr><td><code>results/[date].json</code></td><td>전날 적중/불발</td><td>🟠 Routine 생성</td></tr>
+            <tr><td><code>stats.json</code></td><td>누적 적중률</td><td>🟠 Routine 생성</td></tr>
+            <tr><td><code>assets/players/[name].jpg</code></td><td>풀 선수 사진 (사용자픽 우선)</td><td>🔵+사용자</td></tr>
+            <tr><td><code>assets/style_profile.json</code></td><td>사용자 픽 스타일 평균</td><td>1회 분석</td></tr>
+            <tr><td><code>assets/fonts/Pretendard-Black.otf</code></td><td>카드 폰트</td><td>정적</td></tr>
+          </tbody>
+        </table>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://github.com/jaycekim92/kbo-dduksang-tracker" target="_blank">코드 (private)</a> ·
+    <a href="https://github.com/jaycekim92/kbo-dduksang-images" target="_blank">이미지 mirror</a> ·
+    <a href="https://github.com/jaycekim92/kbo-dduksang-dashboard" target="_blank">이 페이지</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

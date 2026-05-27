@@ -1,0 +1,100 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+  background: #0d1117; color: #e6edf3;
+  line-height: 1.6;
+}
+header {
+  background: linear-gradient(135deg, #1a2332 0%, #0d1117 100%);
+  padding: 32px 24px; text-align: center; border-bottom: 1px solid #30363d;
+}
+header h1 { font-size: 28px; margin-bottom: 8px; }
+.updated { color: #8b949e; font-size: 14px; }
+main { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
+.card {
+  background: #161b22; border: 1px solid #30363d; border-radius: 12px;
+  padding: 20px 24px; margin-bottom: 20px;
+}
+.card h2 { font-size: 18px; margin-bottom: 16px; color: #f0f6fc; }
+
+/* 시스템 상태 */
+.health-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;
+}
+.health-item {
+  background: #0d1117; border: 1px solid #30363d; border-radius: 8px;
+  padding: 12px 16px;
+}
+.health-item .name { font-size: 12px; color: #8b949e; margin-bottom: 4px; }
+.health-item .value { font-size: 16px; font-weight: 600; }
+.health-item .value.ok { color: #3fb950; }
+.health-item .value.warn { color: #d29922; }
+.health-item .value.fail { color: #f85149; }
+
+/* 누적 성적 */
+.stats-row {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px; margin-bottom: 16px;
+}
+.stat-box { text-align: center; padding: 12px; background: #0d1117; border-radius: 8px; }
+.stat-box .num { font-size: 28px; font-weight: 700; color: #58a6ff; }
+.stat-box .label { font-size: 12px; color: #8b949e; margin-top: 4px; }
+
+/* 오늘의 픽 */
+.pick-card { display: flex; gap: 20px; align-items: center; }
+.pick-card img {
+  width: 240px; height: 180px; object-fit: cover; border-radius: 8px;
+  border: 1px solid #30363d;
+}
+.pick-info { flex: 1; }
+.pick-info .name { font-size: 32px; font-weight: 700; color: #FFD600; }
+.pick-info .meta { color: #8b949e; margin-top: 8px; }
+.pick-info .reason { margin-top: 12px; font-size: 14px; line-height: 1.7; }
+
+/* 풀 그리드 */
+.filters { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.filters button {
+  background: #21262d; color: #e6edf3; border: 1px solid #30363d;
+  padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 13px;
+}
+.filters button.active { background: #4a90e2; border-color: #4a90e2; }
+.pool-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px;
+}
+.pool-item {
+  background: #0d1117; border: 1px solid #30363d; border-radius: 8px;
+  overflow: hidden; transition: transform 0.15s;
+}
+.pool-item:hover { transform: translateY(-2px); border-color: #58a6ff; }
+.pool-item img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.pool-item .info { padding: 8px 10px; }
+.pool-item .name { font-weight: 600; font-size: 14px; }
+.pool-item .meta { font-size: 11px; color: #8b949e; margin-top: 2px; }
+.pool-item .ops { font-size: 12px; color: #58a6ff; margin-top: 2px; font-weight: 600; }
+.pool-item.is-new { border-color: #d29922; }
+.pool-item.is-new .name::after { content: ' 🆕'; }
+
+/* 최근 7일 표 */
+table.recent, table.files-table {
+  width: 100%; border-collapse: collapse; font-size: 14px;
+}
+table.recent th, table.recent td, table.files-table th, table.files-table td {
+  padding: 10px; text-align: left; border-bottom: 1px solid #30363d;
+}
+table.recent th, table.files-table th { color: #8b949e; font-weight: 500; }
+table.recent .hit { color: #3fb950; }
+table.recent .miss { color: #f85149; }
+table.files-table code { background: #0d1117; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+
+details summary { cursor: pointer; color: #58a6ff; margin-bottom: 12px; }
+
+/* Mermaid */
+.mermaid { background: #0d1117; padding: 20px; border-radius: 8px; text-align: center; }
+
+footer {
+  max-width: 1200px; margin: 32px auto; padding: 20px 16px;
+  text-align: center; color: #8b949e; font-size: 13px;
+  border-top: 1px solid #30363d;
+}
+footer a { color: #58a6ff; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
