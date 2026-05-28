@@ -1,0 +1,17 @@
+{
+  "date": "2026-05-02",
+  "dduksang": {
+    "name": "김호령",
+    "team": "KIA",
+    "hits": 1,
+    "ab": null,
+    "hit": true,
+    "team_result": "승"
+  },
+  "warning": {
+    "name": "박건우",
+    "team": "NC",
+    "hits": null
+  },
+  "note": "KIA 6-0 KT 대승. 황동하 7이닝 무실점. 김호령 4회말 선두타자 2루타 확인(mdilbo 기사). 박건우 NC vs LG 개별 기록 페치 실패."
+}

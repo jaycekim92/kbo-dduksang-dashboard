@@ -1,0 +1,18 @@
+{
+  "date": "2026-05-21",
+  "dduksang": {
+    "name": "한준수",
+    "team": "KIA",
+    "hits": null,
+    "ab": null,
+    "hit": null,
+    "team_result": "패"
+  },
+  "warning": {
+    "name": "천성호",
+    "team": "LG",
+    "hits": null,
+    "ab": null
+  },
+  "note": "박스스코어 페치 실패 — KIA 팀 패배(vs LG) 확인, 한준수·천성호 개인 성적 미확인. hit=null 처리."
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2026-05-01",
+  "dduksang": {
+    "name": "강백호",
+    "team": "한화",
+    "hits": 0,
+    "ab": 3,
+    "hit": false,
+    "team_result": "패"
+  },
+  "warning": {
+    "name": "김현수",
+    "team": "KT",
+    "hits": null
+  },
+  "note": "한화 3:4 삼성 패배 확인. 강백호 2회초 볼넷 기록, 안타는 확인 불가 (0으로 추정)."
+}

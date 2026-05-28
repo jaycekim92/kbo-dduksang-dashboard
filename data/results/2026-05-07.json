@@ -1,0 +1,19 @@
+{
+  "date": "2026-05-07",
+  "dduksang": {
+    "name": "최원준",
+    "team": "KT",
+    "hits": 0,
+    "ab": 0,
+    "hit": false,
+    "team_result": "취소",
+    "note": "롯데-KT 수원 경기 우천 취소. 경기 자체 없음."
+  },
+  "warning": {
+    "name": "최형우",
+    "team": "삼성",
+    "hits": null,
+    "ab": null,
+    "note": "삼성-키움 5/7 경기 박스스코어 미확인."
+  }
+}

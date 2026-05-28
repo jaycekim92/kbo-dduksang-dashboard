@@ -1,0 +1,19 @@
+{
+  "date": "2026-05-10",
+  "dduksang": {
+    "name": "김호령",
+    "team": "KIA",
+    "hits": null,
+    "ab": null,
+    "hit": null,
+    "team_result": "패",
+    "note": "KIA 3:7 롯데 패 확인. 김호령 개인 타수/안타 박스스코어 페치 실패(403 차단) — hit=null 미확인 보류."
+  },
+  "warning": {
+    "name": "박성한",
+    "team": "SSG",
+    "hits": 0,
+    "ab": 1,
+    "note": "SSG 1:3 두산 패. 박성한 대타 출장 1타수 0안타(좌익수 뜬공) 확인."
+  }
+}

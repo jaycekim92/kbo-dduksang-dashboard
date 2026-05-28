@@ -1,0 +1,19 @@
+{
+  "date": "2026-05-22",
+  "dduksang": {
+    "name": "김호령",
+    "team": "KIA",
+    "hits": 2,
+    "ab": 4,
+    "hit": true,
+    "team_result": "승",
+    "note": "역전 투런홈런+쐐기타 2안타. KIA 5-2 SSG 승리. 타수 4는 추정치."
+  },
+  "warning": {
+    "name": "박성한",
+    "team": "SSG",
+    "hits": null,
+    "ab": null,
+    "note": "SSG 5연패, KIA에 2-5 패배. 개별 타수/안타 미확인."
+  }
+}

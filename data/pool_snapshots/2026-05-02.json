@@ -1,0 +1,43 @@
+{
+  "date": "2026-05-02",
+  "yesterday_date": "2026-05-01",
+  "ops_source": "fallback: pool baseline (KBO fetch 3단 모두 실패, 공식 사이트 차단)",
+  "yesterday_games": {
+    "LG_5_NC_1": "LG 승",
+    "SSG_10_Lotte_7": "SSG 승",
+    "Samsung_4_Hanwha_3": "삼성 승",
+    "KT_4_KIA_3": "KT 승",
+    "Doosan_16_Kiwoom_6": "두산 승"
+  },
+  "pool": [
+    {"name": "박성한", "team": "SSG", "ops": 1.156, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "승"},
+    {"name": "문현빈", "team": "한화", "ops": 1.155, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "패"},
+    {"name": "류지혁", "team": "삼성", "ops": 1.096, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "승"},
+    {"name": "페라자", "team": "한화", "ops": 1.051, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "패"},
+    {"name": "오스틴", "team": "LG", "ops": 1.041, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "승"},
+    {"name": "박준순", "team": "두산", "ops": 1.016, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "승"},
+    {"name": "최정", "team": "SSG", "ops": 1.004, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "승"},
+    {"name": "레이예스", "team": "롯데", "ops": 0.933, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "패"},
+    {"name": "이우성", "team": "NC", "ops": 0.924, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "패"},
+    {"name": "박건우", "team": "NC", "ops": 0.918, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "패"},
+    {"name": "최형우", "team": "삼성", "ops": 0.918, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "승"},
+    {"name": "천성호", "team": "LG", "ops": 0.901, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "승"},
+    {"name": "문성주", "team": "LG", "ops": 0.891, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "승"},
+    {"name": "노진혁", "team": "롯데", "ops": 0.886, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "패"},
+    {"name": "박민우", "team": "NC", "ops": 0.876, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "패"},
+    {"name": "디아즈", "team": "삼성", "ops": 0.856, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "승"},
+    {"name": "김현수", "team": "KT", "ops": 0.852, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "승"},
+    {"name": "김선빈", "team": "KIA", "ops": 0.843, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "패"},
+    {"name": "한준수", "team": "KIA", "ops": 0.841, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "패"},
+    {"name": "문보경", "team": "LG", "ops": 0.836, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "승"},
+    {"name": "박찬호", "team": "두산", "ops": 0.826, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "승"},
+    {"name": "최원준", "team": "KT", "ops": 0.816, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "승"},
+    {"name": "카메론", "team": "두산", "ops": 0.815, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "승"},
+    {"name": "강백호", "team": "한화", "ops": 0.814, "avg": null, "yesterday_ab": 3, "yesterday_hits": 0, "yesterday_played": true, "yesterday_team_result": "패"},
+    {"name": "나성범", "team": "KIA", "ops": 0.813, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "패"},
+    {"name": "김주원", "team": "NC", "ops": 0.784, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "패"},
+    {"name": "안치홍", "team": "키움", "ops": 0.778, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "패"},
+    {"name": "김호령", "team": "KIA", "ops": 0.760, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "패"},
+    {"name": "데일", "team": "KIA", "ops": 0.739, "avg": null, "yesterday_ab": null, "yesterday_hits": null, "yesterday_played": true, "yesterday_team_result": "패"}
+  ]
+}

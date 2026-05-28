@@ -1,0 +1,20 @@
+{
+  "date": "2026-05-24",
+  "dduksang": {
+    "name": "김주원",
+    "team": "NC",
+    "hits": null,
+    "ab": null,
+    "hit": null,
+    "team_result": "패",
+    "note": "KT 10-5 NC — 박스스코어 페치 실패(네트워크 제한). 개인 기록 미확인. 팀 결과: NC 패(5연패). streak 미변경."
+  },
+  "warning": {
+    "name": "노진혁",
+    "team": "롯데",
+    "hits": 0,
+    "ab": null,
+    "team_result": "패",
+    "note": "삼성 10-0 롯데(양창섭 완봉). 롯데 팀 전체 1안타. 노진혁 안타 추정 0 (완봉패 1안타 경기). 개인 타수는 박스스코어 미확인."
+  }
+}

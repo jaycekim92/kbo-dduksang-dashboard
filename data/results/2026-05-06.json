@@ -1,0 +1,20 @@
+{
+  "date": "2026-05-06",
+  "dduksang": {
+    "name": "김호령",
+    "team": "KIA",
+    "hits": null,
+    "ab": null,
+    "hit": null,
+    "team_result": "패",
+    "note": "KIA 2-7 한화 패. 김호령 선발 출전(2번 중견수) 확인, 개인 타수/안타 박스스코어 페치 실패"
+  },
+  "warning": {
+    "name": "류지혁",
+    "team": "삼성",
+    "hits": null,
+    "ab": null,
+    "team_result": "승",
+    "note": "삼성 2-1 키움 승. 류지혁 6회말 밀어내기 볼넷 기록 확인, 개인 안타 수 박스스코어 페치 실패"
+  }
+}

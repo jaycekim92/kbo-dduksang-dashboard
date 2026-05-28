@@ -1,0 +1,17 @@
+{
+  "date": "2026-05-09",
+  "dduksang": {
+    "name": "강백호",
+    "team": "한화",
+    "hits": 1,
+    "ab": 4,
+    "hit": true,
+    "team_result": "승"
+  },
+  "warning": {
+    "name": "문성주",
+    "hits": null,
+    "ab": null,
+    "note": "어제 폼 개별 페치 실패 — LG 3:11 패배 경기 출전 확인, 개별 타수/안타 미확인"
+  }
+}

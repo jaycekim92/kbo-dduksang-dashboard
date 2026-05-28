@@ -1,0 +1,18 @@
+{
+  "date": "2026-04-30",
+  "dduksang": {
+    "name": "김주원",
+    "team": "NC",
+    "hits": 1,
+    "ab": 4,
+    "hit": true,
+    "team_result": "승",
+    "note": "1회 리드오프 홈런 확인 (NC 7-2 KIA 승)"
+  },
+  "warning": {
+    "name": "노진혁",
+    "team": "롯데",
+    "hits": null,
+    "note": "박스스코어 데이터 확인 불가"
+  }
+}

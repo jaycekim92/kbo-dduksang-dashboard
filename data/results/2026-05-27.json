@@ -1,0 +1,15 @@
+{
+  "date": "2026-05-27",
+  "dduksang": {
+    "name": "김지찬",
+    "team": "삼성",
+    "hits": 1,
+    "ab": null,
+    "hit": true,
+    "team_result": "승"
+  },
+  "warning": {
+    "name": "김도영",
+    "hits": null
+  }
+}

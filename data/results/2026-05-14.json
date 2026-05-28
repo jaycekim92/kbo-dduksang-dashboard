@@ -1,0 +1,19 @@
+{
+  "date": "2026-05-14",
+  "dduksang": {
+    "name": "데일",
+    "team": "KIA",
+    "hits": 0,
+    "ab": 0,
+    "hit": false,
+    "team_result": "승",
+    "note": "KIA 5:3 두산 승. 데일은 2026-05-11 5월 타율 0.136로 2군 강등 — 5/14 미출장. hit=false 처리."
+  },
+  "warning": {
+    "name": "박건우",
+    "team": "NC",
+    "hits": null,
+    "ab": null,
+    "note": "NC 5:4 롯데 승. 박건우 개인 타수/안타 박스스코어 페치 실패 — 미확인."
+  }
+}

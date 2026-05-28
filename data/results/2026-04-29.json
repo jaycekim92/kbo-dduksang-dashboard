@@ -1,0 +1,16 @@
+{
+  "date": "2026-04-29",
+  "dduksang": {
+    "name": "박찬호",
+    "team": "두산",
+    "hits": 1,
+    "ab": 4,
+    "hit": true,
+    "team_result": "승"
+  },
+  "warning": {
+    "name": "페라자",
+    "team": "한화",
+    "hits": null
+  }
+}
