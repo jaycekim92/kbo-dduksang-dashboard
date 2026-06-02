@@ -63,6 +63,33 @@
 
 ---
 
+## 발견점 (검토 2026-06-02)
+
+### 🟢 잘 작동
+- Pages built/success — 매번 push 후 자동 deploy (5-30초)
+- sync_dashboard.py 매일 자동 동기화 정상 (commit 누적)
+- trade_status.json 첫 도입일에 정상 통합 (60명 상태 추출)
+- 박준순 status=injured 자동 표시 (Trade 5/26 부상자 명단)
+
+### 🟡 개선 필요
+- **results 5일 누락** (5/3·5/27·5/28·5/30·5/31 등): picks는 존재하지만 results 없음
+  - 가능성: 휴식일 / routine이 결과 기록 실패 / 또는 의도된 스킵
+  - 영향: 최근 7일 테이블의 "결과" 컬럼이 "⏰ 대기"로 표시됨
+  - 조치 필요: routine 로그 분석 또는 routine 보강
+- **사진 잔존**: 부상/이탈 멤버 9명 사진이 `data/players/`에 남음 (노진혁·문보경·한준수·문성주·데일·박찬호 등)
+  - 영향: UI엔 안 보임 (latest.json의 pool만 렌더)
+  - 의도된 동작: 복귀 시 재사용 → 그대로 유지
+- **pool_snapshots 사이즈 차이**: 5/26 이전 4KB → 5/26부터 10KB
+  - 원인: 동적 풀 전환 시점. 이전엔 29명+baseline, 이후 32명+diff+띠/별자리
+  - 정상 — 호환성 유지됨
+
+### 🟢 신규 활용 가능
+- **trade_status UI 표시**: 부상자 명단 / 최근 이동 신호 별도 섹션 추가하면 운영 가시성 ↑
+- **stats 시계열**: 캔버스 자리만 잡혀있고 Chart.js 데이터 binding 미구현. 적중률 추이 그래프 가치 큼
+- **풀 변동 history**: pool_snapshots 30일치 누적 → 선수별 진입/이탈 timeline 가능
+
+---
+
 ## 다음 할 일
 
 | 우선순위 | 항목 | 비고 |
