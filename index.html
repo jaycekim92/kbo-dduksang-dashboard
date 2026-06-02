@@ -34,6 +34,19 @@
       <div class="pick-card" id="today-pick"></div>
     </section>
 
+    <!-- 최근 이동 신호 -->
+    <section class="card">
+      <h2>⚡ 최근 이동 신호 (KBO 공식)</h2>
+      <div class="trade-summary" id="trade-summary"></div>
+      <details>
+        <summary>최근 7일 전체 이동 보기</summary>
+        <table class="trade-table" id="trade-table">
+          <thead><tr><th>날짜</th><th>항목</th><th>팀</th><th>선수</th><th>비고</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </details>
+    </section>
+
     <!-- 오늘의 풀 -->
     <section class="card">
       <h2>👥 오늘의 풀 <span id="pool-count"></span></h2>
@@ -42,6 +55,7 @@
         <button data-filter="user">사용자픽</button>
         <button data-filter="auto">자동픽</button>
         <button data-filter="new">신규</button>
+        <button data-filter="injured">⚠️ 부상</button>
       </div>
       <div class="pool-grid" id="pool-grid"></div>
     </section>

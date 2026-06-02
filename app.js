@@ -45,14 +45,113 @@ async function init() {
   // 4. 오늘의 떡상픽
   await renderTodayPick(ops);
 
-  // 5. 풀 그리드
+  // 5. 최근 이동 신호 (trade_status)
+  await renderTrade();
+
+  // 6. 풀 그리드 (trade 정보로 부상자 표시)
   renderPool(ops);
 
-  // 6. 최근 7일
+  // 7. 최근 7일
   await renderRecent();
 
-  // 7. Mermaid 렌더
+  // 8. 적중률 시계열 차트
+  await renderHitChart();
+
+  // 9. Mermaid 렌더
   mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { background: '#0d1117' }});
+}
+
+async function renderTrade() {
+  const trade = await fetchJSON('trade_status.json');
+  if (!trade) {
+    document.getElementById('trade-summary').innerHTML = '<div style="color:#8b949e">데이터 없음</div>';
+    return;
+  }
+  // 상태별 카운트
+  const counts = {};
+  Object.values(trade.status).forEach(s => { counts[s.status] = (counts[s.status]||0) + 1; });
+  const labels = {
+    injured: '🤕 부상자', injured_long: '🏥 장기재활',
+    released: '🔴 방출/웨이버', military: '🪖 군보류',
+    registered: '🟢 1군 등록', transferred: '⚡ 트레이드'
+  };
+  const summary = Object.entries(counts).map(([k,v]) =>
+    `<div class="trade-chip"><span class="num">${v}</span><span class="lbl">${labels[k]||k}</span></div>`
+  ).join('');
+  document.getElementById('trade-summary').innerHTML = summary;
+
+  // 최근 7일 표
+  const cutoff = new Date(Date.now() - 7*86400000).toISOString().slice(0,10);
+  const recent = trade.rows.filter(r => r.date >= cutoff && r.item !== '등번호 변경').slice(0, 30);
+  const tbody = document.querySelector('#trade-table tbody');
+  tbody.innerHTML = recent.length ? recent.map(r => {
+    const itemCls = r.item.includes('부상') || r.item.includes('재활') ? 'injured' :
+                    r.item.includes('웨이버') || r.item.includes('자유계약') ? 'released' :
+                    r.item.includes('추가 등록') ? 'registered' : '';
+    return `<tr class="${itemCls}">
+      <td>${fmtDate(r.date)}</td>
+      <td>${r.item}</td>
+      <td>${r.team}</td>
+      <td>${r.name} <span class="pos">(${r.position})</span></td>
+      <td>${r.note || '-'}</td>
+    </tr>`;
+  }).join('') : '<tr><td colspan="5" style="text-align:center;color:#8b949e">최근 7일 이동 없음</td></tr>';
+}
+
+async function renderHitChart() {
+  // 최근 30일 results 받아 적중률 추이 계산
+  const dates = [];
+  for (let i = 29; i >= 0; i--) {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    dates.push(d.toISOString().slice(0,10));
+  }
+  const results = await Promise.all(dates.map(d => fetchJSON(`results/${d}.json`)));
+  const points = [];
+  let hits = 0, total = 0;
+  for (let i = 0; i < dates.length; i++) {
+    const r = results[i];
+    if (r && r.dduksang) {
+      total++;
+      if (r.dduksang.hit) hits++;
+      points.push({ x: dates[i], y: total ? (hits/total*100) : 0, hit: r.dduksang.hit, name: r.dduksang.name });
+    }
+  }
+  if (points.length === 0) return;
+  const ctx = document.getElementById('hitChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: points.map(p => p.x.slice(5)),
+      datasets: [{
+        label: '누적 적중률 (%)',
+        data: points.map(p => p.y),
+        borderColor: '#58a6ff',
+        backgroundColor: 'rgba(88, 166, 255, 0.1)',
+        tension: 0.3,
+        fill: true,
+        pointBackgroundColor: points.map(p => p.hit ? '#3fb950' : '#f85149'),
+        pointRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { labels: { color: '#e6edf3' } },
+        tooltip: {
+          callbacks: {
+            label: (c) => {
+              const p = points[c.dataIndex];
+              return `${p.name} ${p.hit ? '✅' : '❌'} (누적 ${c.parsed.y.toFixed(0)}%)`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { ticks: { color: '#8b949e' }, grid: { color: '#21262d' } },
+        y: { ticks: { color: '#8b949e' }, grid: { color: '#21262d' }, min: 0, max: 100 }
+      }
+    }
+  });
 }
 
 function renderHealth(ops) {
@@ -113,15 +212,21 @@ function renderPool(ops) {
       if (filter === 'user') return USER_PICKS.has(p.name);
       if (filter === 'auto') return !USER_PICKS.has(p.name);
       if (filter === 'new') return p.is_new;
+      if (filter === 'injured') return p.status === 'injured';
     });
     grid.innerHTML = items.map(p => {
       const by = String(p.birth_year || '').slice(-2);
-      const cls = p.is_new ? 'is-new' : '';
+      const classes = [];
+      if (p.is_new) classes.push('is-new');
+      if (p.status === 'injured') classes.push('is-injured');
+      if (!p.in_hermes) classes.push('is-preserved');
       const pickType = USER_PICKS.has(p.name) ? '🟢' : '🟡';
-      return `<div class="pool-item ${cls}">
+      const statusBadge = p.status === 'injured' ? '<span class="badge injured">🤕 부상</span>' :
+                          !p.in_hermes ? '<span class="badge preserved">⏸ 보존</span>' : '';
+      return `<div class="pool-item ${classes.join(' ')}" title="${p.status_reason || ''}">
         <img src="${IMG_BASE}/${encodeURIComponent(p.name)}.jpg" onerror="this.style.background='#21262d';this.style.minHeight='110px'">
         <div class="info">
-          <div class="name">${pickType} ${p.name}</div>
+          <div class="name">${pickType} ${p.name} ${statusBadge}</div>
           <div class="meta">${p.team} · ${by}년 ${p.chinese}</div>
           <div class="ops">OPS ${p.ops?.toFixed(3) || '-'}</div>
         </div>

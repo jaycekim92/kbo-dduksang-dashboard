@@ -98,3 +98,25 @@ footer {
 }
 footer a { color: #58a6ff; text-decoration: none; }
 footer a:hover { text-decoration: underline; }
+
+/* Trade summary */
+.trade-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 16px; }
+.trade-chip { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; }
+.trade-chip .num { font-size: 22px; font-weight: 700; color: #58a6ff; }
+.trade-chip .lbl { font-size: 12px; color: #8b949e; }
+
+/* Trade table */
+.trade-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+.trade-table th, .trade-table td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #21262d; }
+.trade-table th { color: #8b949e; font-weight: 500; font-size: 12px; }
+.trade-table tr.injured td:nth-child(2) { color: #d29922; }
+.trade-table tr.released td:nth-child(2) { color: #f85149; }
+.trade-table tr.registered td:nth-child(2) { color: #3fb950; }
+.trade-table .pos { color: #8b949e; font-size: 11px; }
+
+/* Pool badges */
+.pool-item .badge { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 10px; font-weight: 600; margin-left: 4px; vertical-align: middle; }
+.pool-item .badge.injured { background: #d29922; color: #0d1117; }
+.pool-item .badge.preserved { background: #8b949e; color: #0d1117; }
+.pool-item.is-injured { border-color: #d29922; opacity: 0.85; }
+.pool-item.is-preserved { border-color: #8b949e; opacity: 0.75; }
