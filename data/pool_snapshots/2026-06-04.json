@@ -488,6 +488,22 @@
       "in_hermes": true
     },
     {
+      "name": "김선빈",
+      "team": "KIA",
+      "ops": 0.71642,
+      "ops_baseline": 0.71642,
+      "avg": 0.26702,
+      "updated": true,
+      "birth_year": 1989,
+      "chinese": "뱀띠",
+      "zodiac": "사수자리",
+      "rank": 33,
+      "is_new": false,
+      "status": "active",
+      "status_reason": null,
+      "in_hermes": false
+    },
+    {
       "name": "나성범",
       "team": "KIA",
       "ops": 0.83107,
@@ -534,22 +550,6 @@
       "status": "active",
       "status_reason": null,
       "in_hermes": true
-    },
-    {
-      "name": "김선빈",
-      "team": "KIA",
-      "ops": null,
-      "ops_baseline": null,
-      "avg": null,
-      "updated": false,
-      "birth_year": 1989,
-      "chinese": "뱀띠",
-      "zodiac": "사수자리",
-      "rank": null,
-      "is_new": false,
-      "status": "active",
-      "status_reason": null,
-      "in_hermes": false
     }
   ],
   "diff": {
