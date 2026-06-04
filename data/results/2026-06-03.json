@@ -3,11 +3,16 @@
   "dduksang": {
     "name": "박민우",
     "team": "NC",
-    "hits": 0,
-    "ab": 0,
-    "hit": false,
+    "hits": 1,
+    "ab": null,
+    "hit": true,
     "team_result": "승",
-    "played": false,
-    "backfilled": true
+    "note": "연장 10회 끝에 NC 6-4 삼성 승. 박민우 홈런 확인(네이트스포츠 20260603n23300). 자동 백필 played=false 오류 수정."
+  },
+  "warning": {
+    "name": "최정",
+    "team": "SSG",
+    "hits": null,
+    "note": "박스스코어 개인기록 미확인."
   }
 }
