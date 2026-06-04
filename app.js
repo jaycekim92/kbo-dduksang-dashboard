@@ -111,17 +111,15 @@ async function renderHitChart() {
   for (let i = 0; i < dates.length; i++) {
     const r = results[i];
     if (!r || !r.dduksang) continue;
-    const h = r.dduksang.hit;
-    const isUnknown = h === null || h === undefined;
-    if (!isUnknown) {
+    const { kind } = pickStatus(r);
+    if (kind === 'hit' || kind === 'miss') {
       confirmed++;
-      if (h === true) hits++;
+      if (kind === 'hit') hits++;
     }
     points.push({
       x: dates[i],
       y: confirmed ? (hits / confirmed * 100) : 0,
-      hit: h,
-      isUnknown,
+      kind,
       name: r.dduksang.name,
     });
   }
@@ -142,10 +140,10 @@ async function renderHitChart() {
         tension: 0.3,
         fill: true,
         pointBackgroundColor: points.map(p =>
-          p.isUnknown ? '#6e7681' : (p.hit ? '#3fb950' : '#f85149')
+          p.kind === 'hit' ? '#3fb950' : (p.kind === 'miss' ? '#f85149' : '#6e7681')
         ),
         pointBorderColor: points.map(p =>
-          p.isUnknown ? '#6e7681' : (p.hit ? '#3fb950' : '#f85149')
+          p.kind === 'hit' ? '#3fb950' : (p.kind === 'miss' ? '#f85149' : '#6e7681')
         ),
         pointRadius: 5,
         pointHoverRadius: 7,
@@ -159,8 +157,8 @@ async function renderHitChart() {
           callbacks: {
             label: (c) => {
               const p = points[c.dataIndex];
-              const mark = p.isUnknown ? '⏰ 미확정' : (p.hit ? '✅ 적중' : '❌ 미스');
-              return `${p.name} ${mark} (누적 ${c.parsed.y.toFixed(0)}%)`;
+              const marks = { hit: '✅ 적중', miss: '❌ 미스', void: '⚪ 무효(노게임·결장)', pending: '⏰ 미확정' };
+              return `${p.name} ${marks[p.kind] || ''} (누적 ${c.parsed.y.toFixed(0)}%)`;
             }
           }
         }
@@ -194,27 +192,19 @@ async function renderStats(stats) {
     document.getElementById('stats').innerHTML = '<div class="stat-box"><div class="num">-</div><div class="label">데이터 없음</div></div>';
     return;
   }
-  // results 받아 미확정 카운트
-  let unknown = 0, miss = 0;
-  const dates = [];
-  for (let i = 60; i >= 0; i--) {
-    const d = new Date(); d.setDate(d.getDate() - i);
-    dates.push(d.toISOString().slice(0,10));
-  }
-  const allResults = await Promise.all(dates.map(d => fetchJSON(`results/${d}.json`)));
-  for (const r of allResults) {
-    if (!r || !r.dduksang) continue;
-    const h = r.dduksang.hit;
-    if (h === null || h === undefined) unknown++;
-    else if (h === false) miss++;
-  }
-  const confirmed = Math.max(0, stats.total_days - unknown);
+  // 분모 = 확정(played)만. 무효(노게임·결장)/미종결은 제외.
+  const confirmed = stats.confirmed_days ?? stats.total_days ?? 0;
   const rate = confirmed ? ((stats.dduksang_hits / confirmed) * 100).toFixed(0) : 0;
+  const voidN = (stats.void_nogame || 0) + (stats.void_benched || 0);
+  const pending = stats.pending || 0;
+  const lastBox = voidN
+    ? `<div class="num" style="color:#8b949e">${voidN}</div><div class="label">무효<br/><span style="font-size:10px">노게임·결장 (분모 제외)</span></div>`
+    : `<div class="num" style="color:#8b949e">${pending}</div><div class="label">미확정<br/><span style="font-size:10px">결과 대기</span></div>`;
   document.getElementById('stats').innerHTML = `
     <div class="stat-box"><div class="num">${rate}%</div><div class="label">누적 적중률<br/><span style="font-size:10px">확정분 기준</span></div></div>
     <div class="stat-box"><div class="num">${stats.dduksang_hits}/${confirmed}</div><div class="label">적중/확정</div></div>
     <div class="stat-box"><div class="num">${stats.dduksang_streak || 0}</div><div class="label">현재 연속</div></div>
-    <div class="stat-box"><div class="num" style="color:#8b949e">${unknown}</div><div class="label">미확정<br/><span style="font-size:10px">박스스코어 페치 실패</span></div></div>
+    <div class="stat-box">${lastBox}</div>
   `;
 }
 
@@ -280,6 +270,18 @@ function renderPool(ops) {
   });
 }
 
+// 결과 상태 → 표시. status(played/nogame/benched) 우선, 없으면 hit 값으로 보정.
+// kind: hit/miss = 적중률 분모 포함, void = 무효(노게임·결장), pending = 대기
+function pickStatus(result) {
+  if (!result || !result.dduksang) return { mark: '<span style="color:#8b949e">⏰ 대기</span>', kind: 'pending' };
+  const dd = result.dduksang, st = dd.status, h = dd.hit;
+  if (st === 'nogame') return { mark: '<span style="color:#8b949e">🚫 노게임</span>', kind: 'void' };
+  if (st === 'benched') return { mark: '<span style="color:#d29922">🪑 결장</span>', kind: 'void' };
+  if (h === true) return { mark: '<span class="hit">✅ 적중</span>', kind: 'hit' };
+  if (h === false) return { mark: '<span class="miss">❌ 불발</span>', kind: 'miss' };
+  return { mark: '<span style="color:#8b949e">⏰ 미확정</span>', kind: 'pending' };
+}
+
 async function renderRecent() {
   const tbody = document.querySelector('#recent-table tbody');
   const rows = [];
@@ -289,21 +291,17 @@ async function renderRecent() {
     const pick = await fetchJSON(`picks/${date}.json`);
     if (!pick) continue;
     const result = await fetchJSON(`results/${date}.json`);
-    const hit = result?.dduksang?.hit;
+    const { mark, kind } = pickStatus(result);
     const hits = result?.dduksang?.hits ?? '-';
     const ab = result?.dduksang?.ab ?? '-';
-    let status;
-    if (!result) status = '<span style="color:#8b949e">⏰ 대기</span>';
-    else if (hit === true) status = '<span class="hit">✅ 적중</span>';
-    else if (hit === false) status = '<span class="miss">❌ 불발</span>';
-    else status = '<span style="color:#8b949e">⏰ 미확정</span>';
+    const record = (kind === 'void' || ab === '-') ? '-' : `${ab}타수 ${hits}안타`;
     rows.push(`<tr>
       <td>${fmtDate(date)}</td>
       <td><strong>${pick.dduksang.name}</strong></td>
       <td>${pick.dduksang.team}</td>
       <td>${pick.dduksang.ops?.toFixed(3)}</td>
-      <td>${ab === '-' ? '-' : `${ab}타수 ${hits}안타`}</td>
-      <td>${status}</td>
+      <td>${record}</td>
+      <td>${mark}</td>
     </tr>`);
   }
   tbody.innerHTML = rows.length ? rows.join('') : '<tr><td colspan="6" style="text-align:center;color:#8b949e">데이터 없음</td></tr>';
