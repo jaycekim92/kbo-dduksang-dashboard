@@ -3,15 +3,11 @@
   "dduksang": {
     "name": "한준수",
     "team": "KIA",
-    "hits": null,
-    "ab": null,
-    "hit": null,
-    "team_result": "승"
-  },
-  "warning": {
-    "name": "오스틴",
-    "team": "LG",
-    "hits": null
-  },
-  "note": "KIA 12-7 한화 어린이날 대승 확인 (Rodriguez 데뷔 첫타석HR, 김도영 시즌 12호HR). 한준수·오스틴 개별 기록 페치 실패 - 박스스코어 접근 불가."
+    "hits": 2,
+    "ab": 4,
+    "hit": true,
+    "team_result": "승",
+    "played": true,
+    "backfilled_daum": true
+  }
 }

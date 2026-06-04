@@ -1,37 +1,14 @@
 {
   "date": "2026-04-28",
-  "results": [
-    {
-      "name": "김호령",
-      "team": "KIA",
-      "role": "떡상픽",
-      "hits": 1,
-      "hit": true,
-      "note": "3회 우중간 2루타 확인"
-    },
-    {
-      "name": "문현빈",
-      "team": "한화",
-      "role": "안전픽",
-      "hits": 0,
-      "hit": false,
-      "note": "볼넷 출루 확인, 안타 기록 미확인"
-    },
-    {
-      "name": "박성한",
-      "team": "SSG",
-      "role": "위험픽",
-      "hits": 1,
-      "hit": true,
-      "note": "1회 선두타자 홈런 확인"
-    },
-    {
-      "name": "최정",
-      "team": "SSG",
-      "role": "위험픽",
-      "hits": 1,
-      "hit": true,
-      "note": "역전 2점 홈런 확인"
-    }
-  ]
+  "dduksang": {
+    "name": "김호령",
+    "team": "KIA",
+    "hits": 1,
+    "ab": 4,
+    "hit": true,
+    "team_result": "패",
+    "played": true,
+    "backfilled_daum": true,
+    "note": "구 스키마(results 배열) → 신 스키마 변환. 3회 우중간 2루타."
+  }
 }

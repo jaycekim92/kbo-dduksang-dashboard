@@ -1,8 +1,8 @@
 {
   "total_days": 30,
-  "dduksang_hits": 10,
+  "dduksang_hits": 15,
   "dduksang_streak": 1,
   "updated_at": "2026-06-04",
-  "max_streak": 4,
-  "note": "2026-06-04 나성범(KIA) 픽. 2026-06-03 박민우(NC) hit=true 수정 — 자동 백필 played=false 오류, 네이트스포츠 기사로 홈런 확인(NC 6-4 삼성 승, 연장) — hits 9→10, streak 0→1. 2026-06-02 심우준(한화) hit=null 미확인(박스스코어 페치 실패, 두산 vs 한화 개인기록 접근 불가) — streak/hits 미변경. 2026-06-02 심우준(한화) 픽. 2026-05-31 김지찬(삼성) hit=null 미확인(박스스코어 페치 실패, 삼성 vs 두산 개인기록 접근 불가) — streak/hits 미변경. 2026-05-29 정준재(SSG) hit=true — 중전 적시타 확인, SSG 한화 4-3 패(창단 첫 10연패) — streak 5. 2026-05-28 안치홍(키움) hit=null 미확인(박스스코어 페치 실패, 키움 5-0 패 확인, 개인기록 접근 불가) — streak/hits 미변경. 2026-05-27 김지찬(삼성) hit=true — 삼성 4:1 SSG 승, 9회 말 선두 안타 확인 — streak 4. 2026-05-26 김현수(KT) hit=null 미확인(박스스코어 페치 실패, 경기 결과 불확실) — streak/hits 미변경. 2026-05-24 김주원(NC) hit=null 미확인(NC 5연패, KT 10-5 승, 개인기록 박스스코어 접근 불가) — streak/hits 미변경. 2026-05-23 최원준(KT) hit=true — 4안타, KT 10-5 NC 승 — streak 3. 2026-05-22 김호령(KIA) hit=true — 역전투런홈런+쐐기타 2안타, KIA 5-2 SSG 승 — streak 2. 2026-05-21 한준수(KIA) hit=null (박스스코어 미확인, KIA 팀 패) — streak/hits 미변경. 2026-05-15 최원준(KT) 3안타 hit=true — streak 1 복귀. 2026-05-14 데일(KIA) 2군 강등 미출장 hit=false — streak 0 초기화. 2026-05-12 안치홍(키움) 결과 미처리. 2026-05-10 김호령(KIA) hit=null 미확인 보류. 2026-05-09 강백호(한화) hit=true."
+  "max_streak": 3,
+  "note": "2026-06-04 Daum hermes(game/{id}.json?detail=true)로 미확정 11건 일괄 확정 백필. 4적중(5/5 한준수·5/24 김주원·5/28 안치홍·5/31 김지찬)/6불발(5/3·5/6·5/10·5/21·5/26·5/30). 4/28 김호령은 구 스키마→신 스키마 변환. 결과: true=15 false=15 null=0 → 15/30(50%), 연속 1, 최장 3. 개인 결과 확정 표준 소스 = Daum sports match."
 }

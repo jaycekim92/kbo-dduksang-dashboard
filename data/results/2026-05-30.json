@@ -3,15 +3,11 @@
   "dduksang": {
     "name": "전병우",
     "team": "삼성",
-    "hits": null,
-    "ab": null,
-    "hit": null,
-    "team_result": null,
-    "note": "박스스코어 페치 실패. 5/30 삼성 vs 두산 경기 개인기록 접근 불가. 팀 결과 미확인 — streak/hits 미변경."
-  },
-  "warning": {
-    "name": "최형우",
-    "hits": null,
-    "note": "박스스코어 페치 실패."
+    "hits": 0,
+    "ab": 4,
+    "hit": false,
+    "team_result": "패",
+    "played": true,
+    "backfilled_daum": true
   }
 }

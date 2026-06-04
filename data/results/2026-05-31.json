@@ -3,14 +3,11 @@
   "dduksang": {
     "name": "김지찬",
     "team": "삼성",
-    "hits": null,
-    "ab": null,
-    "hit": null,
-    "team_result": null
-  },
-  "warning": {
-    "name": "레이예스",
-    "hits": null
-  },
-  "note": "박스스코어 페치 실패 — 삼성 5/31 두산전 개인기록 접근 불가. streak/hits 미변경."
+    "hits": 1,
+    "ab": 3,
+    "hit": true,
+    "team_result": "승",
+    "played": true,
+    "backfilled_daum": true
+  }
 }

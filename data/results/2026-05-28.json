@@ -3,13 +3,11 @@
   "dduksang": {
     "name": "안치홍",
     "team": "키움",
-    "hits": null,
-    "ab": null,
-    "hit": null,
-    "team_result": "패"
-  },
-  "warning": {
-    "name": "오스틴",
-    "hits": null
+    "hits": 1,
+    "ab": 3,
+    "hit": true,
+    "team_result": "패",
+    "played": true,
+    "backfilled_daum": true
   }
 }
