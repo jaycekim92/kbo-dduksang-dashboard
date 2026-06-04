@@ -40,7 +40,7 @@ async function init() {
   renderHealth(ops);
 
   // 3. 누적 성적
-  renderStats(stats);
+  await renderStats(stats);
 
   // 4. 오늘의 떡상픽
   await renderTodayPick(ops);
@@ -99,7 +99,7 @@ async function renderTrade() {
 }
 
 async function renderHitChart() {
-  // 최근 30일 results 받아 적중률 추이 계산
+  // 최근 30일 results — 미확정 포함 (회색 점)
   const dates = [];
   for (let i = 29; i >= 0; i--) {
     const d = new Date(); d.setDate(d.getDate() - i);
@@ -107,30 +107,48 @@ async function renderHitChart() {
   }
   const results = await Promise.all(dates.map(d => fetchJSON(`results/${d}.json`)));
   const points = [];
-  let hits = 0, total = 0;
+  let hits = 0, confirmed = 0;
   for (let i = 0; i < dates.length; i++) {
     const r = results[i];
-    if (r && r.dduksang) {
-      total++;
-      if (r.dduksang.hit) hits++;
-      points.push({ x: dates[i], y: total ? (hits/total*100) : 0, hit: r.dduksang.hit, name: r.dduksang.name });
+    if (!r || !r.dduksang) continue;
+    const h = r.dduksang.hit;
+    const isUnknown = h === null || h === undefined;
+    if (!isUnknown) {
+      confirmed++;
+      if (h === true) hits++;
     }
+    points.push({
+      x: dates[i],
+      y: confirmed ? (hits / confirmed * 100) : 0,
+      hit: h,
+      isUnknown,
+      name: r.dduksang.name,
+    });
   }
   if (points.length === 0) return;
-  const ctx = document.getElementById('hitChart').getContext('2d');
-  new Chart(ctx, {
+  // 기존 차트 인스턴스 destroy (중복 방지)
+  const canvas = document.getElementById('hitChart');
+  if (canvas.__chart) canvas.__chart.destroy();
+  const ctx = canvas.getContext('2d');
+  canvas.__chart = new Chart(ctx, {
     type: 'line',
     data: {
       labels: points.map(p => p.x.slice(5)),
       datasets: [{
-        label: '누적 적중률 (%)',
+        label: '누적 적중률 (% — 확정분만)',
         data: points.map(p => p.y),
         borderColor: '#58a6ff',
         backgroundColor: 'rgba(88, 166, 255, 0.1)',
         tension: 0.3,
         fill: true,
-        pointBackgroundColor: points.map(p => p.hit ? '#3fb950' : '#f85149'),
-        pointRadius: 4,
+        pointBackgroundColor: points.map(p =>
+          p.isUnknown ? '#6e7681' : (p.hit ? '#3fb950' : '#f85149')
+        ),
+        pointBorderColor: points.map(p =>
+          p.isUnknown ? '#6e7681' : (p.hit ? '#3fb950' : '#f85149')
+        ),
+        pointRadius: 5,
+        pointHoverRadius: 7,
       }]
     },
     options: {
@@ -141,7 +159,8 @@ async function renderHitChart() {
           callbacks: {
             label: (c) => {
               const p = points[c.dataIndex];
-              return `${p.name} ${p.hit ? '✅' : '❌'} (누적 ${c.parsed.y.toFixed(0)}%)`;
+              const mark = p.isUnknown ? '⏰ 미확정' : (p.hit ? '✅ 적중' : '❌ 미스');
+              return `${p.name} ${mark} (누적 ${c.parsed.y.toFixed(0)}%)`;
             }
           }
         }
@@ -168,17 +187,31 @@ function renderHealth(ops) {
   ).join('');
 }
 
-function renderStats(stats) {
+async function renderStats(stats) {
   if (!stats) {
     document.getElementById('stats').innerHTML = '<div class="stat-box"><div class="num">-</div><div class="label">데이터 없음</div></div>';
     return;
+  }
+  // results 받아 미확정 카운트
+  let unknown = 0, miss = 0;
+  const dates = [];
+  for (let i = 60; i >= 0; i--) {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    dates.push(d.toISOString().slice(0,10));
+  }
+  const allResults = await Promise.all(dates.map(d => fetchJSON(`results/${d}.json`)));
+  for (const r of allResults) {
+    if (!r || !r.dduksang) continue;
+    const h = r.dduksang.hit;
+    if (h === null || h === undefined) unknown++;
+    else if (h === false) miss++;
   }
   const rate = stats.total_days ? ((stats.dduksang_hits / stats.total_days) * 100).toFixed(0) : 0;
   document.getElementById('stats').innerHTML = `
     <div class="stat-box"><div class="num">${rate}%</div><div class="label">누적 적중률</div></div>
     <div class="stat-box"><div class="num">${stats.dduksang_hits}/${stats.total_days}</div><div class="label">적중/시도</div></div>
-    <div class="stat-box"><div class="num">${stats.dduksang_streak || 0}</div><div class="label">연속 적중</div></div>
-    <div class="stat-box"><div class="num">${stats.max_streak || stats.dduksang_streak || 0}</div><div class="label">최장 연속</div></div>
+    <div class="stat-box"><div class="num">${stats.dduksang_streak || 0}</div><div class="label">현재 연속</div></div>
+    <div class="stat-box"><div class="num" style="color:#8b949e">${unknown}</div><div class="label">미확정<br/><span style="font-size:10px">박스스코어 페치 실패</span></div></div>
   `;
 }
 
