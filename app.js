@@ -37,7 +37,7 @@ async function init() {
   document.getElementById('updated').textContent = `${fmtDate(ops.date)} (외부 갱신: 09:30 KST)`;
 
   // 2. 시스템 상태
-  renderHealth(ops);
+  await renderHealth(ops);
 
   // 3. 누적 성적
   await renderStats(stats);
@@ -173,14 +173,16 @@ async function renderHitChart() {
   });
 }
 
-function renderHealth(ops) {
+async function renderHealth(ops) {
   const today = new Date().toISOString().slice(0,10);
   const isFresh = ops.date === today;
+  const pick = await fetchJSON(`picks/${ops.date}.json`);
+  const posted = isFresh && !!pick;
   const items = [
     { name: 'ops-fetch (09:30)', value: isFresh ? '✅ 정상' : '⚠️ 어제 데이터', cls: isFresh ? 'ok' : 'warn' },
     { name: '풀 사이즈', value: `${ops.pool_size}명`, cls: 'ok' },
-    { name: 'routine 봇 (11:00)', value: '⏰ 대기', cls: 'ok' },
-    { name: '슬랙 발송', value: '⏰ 대기', cls: 'ok' },
+    { name: 'routine 봇 (11:00)', value: posted ? '✅ 게시 완료' : '⏰ 대기', cls: 'ok' },
+    { name: '슬랙 발송', value: posted ? '✅ 발송' : '⏰ 대기', cls: 'ok' },
   ];
   document.getElementById('health').innerHTML = items.map(i =>
     `<div class="health-item"><div class="name">${i.name}</div><div class="value ${i.cls}">${i.value}</div></div>`
@@ -206,10 +208,11 @@ async function renderStats(stats) {
     if (h === null || h === undefined) unknown++;
     else if (h === false) miss++;
   }
-  const rate = stats.total_days ? ((stats.dduksang_hits / stats.total_days) * 100).toFixed(0) : 0;
+  const confirmed = Math.max(0, stats.total_days - unknown);
+  const rate = confirmed ? ((stats.dduksang_hits / confirmed) * 100).toFixed(0) : 0;
   document.getElementById('stats').innerHTML = `
-    <div class="stat-box"><div class="num">${rate}%</div><div class="label">누적 적중률</div></div>
-    <div class="stat-box"><div class="num">${stats.dduksang_hits}/${stats.total_days}</div><div class="label">적중/시도</div></div>
+    <div class="stat-box"><div class="num">${rate}%</div><div class="label">누적 적중률<br/><span style="font-size:10px">확정분 기준</span></div></div>
+    <div class="stat-box"><div class="num">${stats.dduksang_hits}/${confirmed}</div><div class="label">적중/확정</div></div>
     <div class="stat-box"><div class="num">${stats.dduksang_streak || 0}</div><div class="label">현재 연속</div></div>
     <div class="stat-box"><div class="num" style="color:#8b949e">${unknown}</div><div class="label">미확정<br/><span style="font-size:10px">박스스코어 페치 실패</span></div></div>
   `;
@@ -289,7 +292,11 @@ async function renderRecent() {
     const hit = result?.dduksang?.hit;
     const hits = result?.dduksang?.hits ?? '-';
     const ab = result?.dduksang?.ab ?? '-';
-    const status = result ? (hit ? '<span class="hit">✅ 적중</span>' : '<span class="miss">❌ 불발</span>') : '<span style="color:#8b949e">⏰ 대기</span>';
+    let status;
+    if (!result) status = '<span style="color:#8b949e">⏰ 대기</span>';
+    else if (hit === true) status = '<span class="hit">✅ 적중</span>';
+    else if (hit === false) status = '<span class="miss">❌ 불발</span>';
+    else status = '<span style="color:#8b949e">⏰ 미확정</span>';
     rows.push(`<tr>
       <td>${fmtDate(date)}</td>
       <td><strong>${pick.dduksang.name}</strong></td>
