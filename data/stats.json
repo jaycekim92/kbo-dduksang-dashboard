@@ -1,5 +1,5 @@
 {
-  "total_days": 31,
+  "total_days": 32,
   "dduksang_hits": 16,
   "dduksang_streak": 2,
   "updated_at": "2026-06-05",
@@ -9,5 +9,5 @@
   "dduksang_misses": 15,
   "void_nogame": 0,
   "void_benched": 0,
-  "pending": 0
+  "pending": 1
 }
