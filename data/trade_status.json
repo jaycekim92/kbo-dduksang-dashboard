@@ -1,8 +1,32 @@
 {
-  "date": "2026-06-06",
+  "date": "2026-06-07",
   "page_count": 5,
   "row_count": 100,
   "rows": [
+    {
+      "date": "2026-06-06",
+      "item": "소속선수 추가 등록",
+      "team": "두산",
+      "name": "타카다",
+      "position": "투수",
+      "note": ""
+    },
+    {
+      "date": "2026-06-06",
+      "item": "웨이버",
+      "team": "SSG",
+      "name": "화이트",
+      "position": "투수",
+      "note": ""
+    },
+    {
+      "date": "2026-06-06",
+      "item": "자유계약선수",
+      "team": "SSG",
+      "name": "긴지로",
+      "position": "투수",
+      "note": ""
+    },
     {
       "date": "2026-06-05",
       "item": "부상자 명단",
@@ -140,28 +164,28 @@
       "note": "군보류 해제"
     },
     {
-      "date": "2026-06-02",
-      "item": "등번호 변경",
-      "team": "SSG",
-      "name": "김민준",
-      "position": "내야수",
-      "note": "47→5"
+      "date": "2026-06-06",
+      "item": "소속선수 추가 등록",
+      "team": "두산",
+      "name": "타카다",
+      "position": "투수",
+      "note": ""
     },
     {
-      "date": "2026-06-02",
-      "item": "등번호 변경",
+      "date": "2026-06-06",
+      "item": "웨이버",
       "team": "SSG",
-      "name": "김수윤",
-      "position": "내야수",
-      "note": "5→93"
+      "name": "화이트",
+      "position": "투수",
+      "note": ""
     },
     {
-      "date": "2026-06-02",
-      "item": "등번호 변경",
-      "team": "KT",
-      "name": "이재원",
-      "position": "외야수",
-      "note": "105→65"
+      "date": "2026-06-06",
+      "item": "자유계약선수",
+      "team": "SSG",
+      "name": "긴지로",
+      "position": "투수",
+      "note": ""
     },
     {
       "date": "2026-06-05",
@@ -778,33 +802,30 @@
       "name": "문성주",
       "position": "외야수",
       "note": "10일"
-    },
-    {
-      "date": "2026-05-11",
-      "item": "부상자 명단",
-      "team": "LG",
-      "name": "웰스",
-      "position": "투수",
-      "note": "10일"
-    },
-    {
-      "date": "2026-05-11",
-      "item": "부상자 명단",
-      "team": "SSG",
-      "name": "김성욱",
-      "position": "외야수",
-      "note": "10일"
-    },
-    {
-      "date": "2026-05-11",
-      "item": "부상자 명단",
-      "team": "두산",
-      "name": "윤태호",
-      "position": "투수",
-      "note": "10일"
     }
   ],
   "status": {
+    "타카다": {
+      "status": "registered",
+      "date": "2026-06-06",
+      "item": "소속선수 추가 등록",
+      "team": "두산",
+      "note": ""
+    },
+    "화이트": {
+      "status": "released",
+      "date": "2026-06-06",
+      "item": "웨이버",
+      "team": "SSG",
+      "note": ""
+    },
+    "긴지로": {
+      "status": "released",
+      "date": "2026-06-06",
+      "item": "자유계약선수",
+      "team": "SSG",
+      "note": ""
+    },
     "박준순": {
       "status": "injured",
       "date": "2026-06-05",
@@ -1223,20 +1244,6 @@
       "date": "2026-05-11",
       "item": "부상자 명단",
       "team": "LG",
-      "note": "10일"
-    },
-    "웰스": {
-      "status": "injured",
-      "date": "2026-05-11",
-      "item": "부상자 명단",
-      "team": "LG",
-      "note": "10일"
-    },
-    "김성욱": {
-      "status": "injured",
-      "date": "2026-05-11",
-      "item": "부상자 명단",
-      "team": "SSG",
       "note": "10일"
     }
   }
