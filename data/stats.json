@@ -2,7 +2,7 @@
   "total_days": 34,
   "dduksang_hits": 17,
   "dduksang_streak": 0,
-  "updated_at": "2026-06-08",
+  "updated_at": "2026-06-09",
   "max_streak": 3,
   "note": "2026-06-04 Daum hermes(game/{id}.json?detail=true)로 미확정 11건 일괄 확정 백필. 4적중(5/5 한준수·5/24 김주원·5/28 안치홍·5/31 김지찬)/6불발(5/3·5/6·5/10·5/21·5/26·5/30). 4/28 김호령은 구 스키마→신 스키마 변환. 결과: true=15 false=15 null=0 → 15/30(50%), 연속 1, 최장 3. 개인 결과 확정 표준 소스 = Daum sports match.",
   "confirmed_days": 34,
