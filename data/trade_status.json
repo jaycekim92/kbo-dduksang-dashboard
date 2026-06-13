@@ -1,8 +1,40 @@
 {
-  "date": "2026-06-13",
+  "date": "2026-06-14",
   "page_count": 5,
   "row_count": 100,
   "rows": [
+    {
+      "date": "2026-06-13",
+      "item": "소속선수 추가 등록",
+      "team": "SSG",
+      "name": "해치",
+      "position": "투수",
+      "note": ""
+    },
+    {
+      "date": "2026-06-13",
+      "item": "소속선수 추가 등록",
+      "team": "키움",
+      "name": "원성준",
+      "position": "외야수",
+      "note": "육성선수 말소"
+    },
+    {
+      "date": "2026-06-13",
+      "item": "자유계약선수",
+      "team": "SSG",
+      "name": "화이트",
+      "position": "투수",
+      "note": ""
+    },
+    {
+      "date": "2026-06-13",
+      "item": "자유계약선수",
+      "team": "KIA",
+      "name": "아데를린",
+      "position": "내야수",
+      "note": ""
+    },
     {
       "date": "2026-06-12",
       "item": "소속선수 추가 등록",
@@ -132,35 +164,35 @@
       "note": ""
     },
     {
-      "date": "2026-06-08",
-      "item": "부상자 명단",
-      "team": "LG",
-      "name": "송승기",
-      "position": "투수",
-      "note": "10일"
-    },
-    {
-      "date": "2026-06-07",
-      "item": "부상자 명단",
-      "team": "KIA",
-      "name": "오선우",
-      "position": "내야수",
-      "note": "10일"
-    },
-    {
-      "date": "2026-06-06",
-      "item": "부상자 명단",
-      "team": "키움",
-      "name": "안치홍",
-      "position": "내야수",
-      "note": "10일"
-    },
-    {
-      "date": "2026-06-06",
+      "date": "2026-06-13",
       "item": "소속선수 추가 등록",
-      "team": "두산",
-      "name": "타카다",
+      "team": "SSG",
+      "name": "해치",
       "position": "투수",
+      "note": ""
+    },
+    {
+      "date": "2026-06-13",
+      "item": "소속선수 추가 등록",
+      "team": "키움",
+      "name": "원성준",
+      "position": "외야수",
+      "note": "육성선수 말소"
+    },
+    {
+      "date": "2026-06-13",
+      "item": "자유계약선수",
+      "team": "SSG",
+      "name": "화이트",
+      "position": "투수",
+      "note": ""
+    },
+    {
+      "date": "2026-06-13",
+      "item": "자유계약선수",
+      "team": "KIA",
+      "name": "아데를린",
+      "position": "내야수",
       "note": ""
     },
     {
@@ -770,41 +802,37 @@
       "name": "윤태호",
       "position": "투수",
       "note": "10일"
-    },
-    {
-      "date": "2026-05-21",
-      "item": "군보류 자유계약선수",
-      "team": "삼성",
-      "name": "김서준",
-      "position": "투수",
-      "note": ""
-    },
-    {
-      "date": "2026-05-20",
-      "item": "부상자 명단",
-      "team": "SSG",
-      "name": "조형우",
-      "position": "포수",
-      "note": "10일"
-    },
-    {
-      "date": "2026-05-20",
-      "item": "부상자 명단",
-      "team": "SSG",
-      "name": "최정",
-      "position": "내야수",
-      "note": "10일"
-    },
-    {
-      "date": "2026-05-20",
-      "item": "치료·재활명단",
-      "team": "KIA",
-      "name": "오규석",
-      "position": "투수",
-      "note": "30일"
     }
   ],
   "status": {
+    "해치": {
+      "status": "registered",
+      "date": "2026-06-13",
+      "item": "소속선수 추가 등록",
+      "team": "SSG",
+      "note": ""
+    },
+    "원성준": {
+      "status": "registered",
+      "date": "2026-06-13",
+      "item": "소속선수 추가 등록",
+      "team": "키움",
+      "note": "육성선수 말소"
+    },
+    "화이트": {
+      "status": "released",
+      "date": "2026-06-13",
+      "item": "자유계약선수",
+      "team": "SSG",
+      "note": ""
+    },
+    "아데를린": {
+      "status": "released",
+      "date": "2026-06-13",
+      "item": "자유계약선수",
+      "team": "KIA",
+      "note": ""
+    },
     "김기준": {
       "status": "registered",
       "date": "2026-06-12",
@@ -894,13 +922,6 @@
       "date": "2026-06-06",
       "item": "소속선수 추가 등록",
       "team": "두산",
-      "note": ""
-    },
-    "화이트": {
-      "status": "released",
-      "date": "2026-06-06",
-      "item": "웨이버",
-      "team": "SSG",
       "note": ""
     },
     "긴지로": {
@@ -1217,34 +1238,6 @@
       "item": "부상자 명단",
       "team": "두산",
       "note": "10일"
-    },
-    "김서준": {
-      "status": "military",
-      "date": "2026-05-21",
-      "item": "군보류 자유계약선수",
-      "team": "삼성",
-      "note": ""
-    },
-    "조형우": {
-      "status": "injured",
-      "date": "2026-05-20",
-      "item": "부상자 명단",
-      "team": "SSG",
-      "note": "10일"
-    },
-    "최정": {
-      "status": "injured",
-      "date": "2026-05-20",
-      "item": "부상자 명단",
-      "team": "SSG",
-      "note": "10일"
-    },
-    "오규석": {
-      "status": "injured_long",
-      "date": "2026-05-20",
-      "item": "치료·재활명단",
-      "team": "KIA",
-      "note": "30일"
     }
   }
 }
