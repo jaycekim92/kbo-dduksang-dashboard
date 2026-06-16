@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-16",
+  "day_pillar": "신유일 (흰 닭의 날)",
+  "dduksang": {
+    "name": "김지찬",
+    "team": "삼성",
+    "birth_year": 2001,
+    "chinese": "뱀띠",
+    "zodiac": "물고기자리",
+    "ops": 0.75745,
+    "yesterday_ab": 0,
+    "yesterday_hits": 0,
+    "reason": "신유일 닭-뱀 삼합+천간합, iljin_score=3 공동 최상위. OPS .757 풀 하위. recent_picked=false."
+  },
+  "warning": {
+    "name": "최정",
+    "team": "SSG",
+    "birth_year": 1987,
+    "chinese": "토끼띠",
+    "zodiac": "물고기자리",
+    "ops": 0.99583,
+    "yesterday_ab": 0,
+    "yesterday_hits": 0,
+    "is_foreign": false,
+    "reason": "시즌 OPS 0.996 최상위권이나 닭-토끼 상충, iljin_score=-2. 운이 역행하는 자리."
+  },
+  "post_text": "오늘의 비더레 픽은 삼성 김지찬입니다.\n\n신유일(辛酉)이지요. 닭의 기운이 하루를 이끌 때, 뱀띠는 삼합으로 기운이 모이는 자리입니다. 01년생 김지찬은 천간까지 합을 이루니, 오늘은 일진이 타석에 서는 날입니다.\n\n반면 SSG 최정은 87년 토끼띠, 닭과 마주한 토끼는 상충의 자리에 놓입니다. 기록은 뜨거워도 오늘만큼은 운이 식어 있습니다.\n\n어제 전민재가 안타로 흐름을 이었듯, 오늘 일진이 낙점한 이름은 김지찬입니다."
+}
