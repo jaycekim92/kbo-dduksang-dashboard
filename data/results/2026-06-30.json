@@ -1,0 +1,11 @@
+{
+  "date": "2026-06-30",
+  "dduksang": {
+    "name": "심우준",
+    "team": "한화",
+    "status": "nogame",
+    "hit": null,
+    "reason": "경기 취소/연기(status=CANCEL)",
+    "source": "daum"
+  }
+}
