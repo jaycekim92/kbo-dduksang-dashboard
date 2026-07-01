@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-01",
+  "dduksang": {
+    "name": "김민석",
+    "team": "두산",
+    "status": "played",
+    "source": "daum",
+    "hits": 3,
+    "ab": 4,
+    "hr": 0,
+    "hit": true,
+    "team_result": "패"
+  }
+}
