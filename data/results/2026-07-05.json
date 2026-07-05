@@ -1,0 +1,11 @@
+{
+  "date": "2026-07-05",
+  "dduksang": {
+    "name": "김호령",
+    "team": "KIA",
+    "status": "nogame",
+    "hit": null,
+    "reason": "경기 취소/연기(status=CANCEL)",
+    "source": "daum"
+  }
+}
