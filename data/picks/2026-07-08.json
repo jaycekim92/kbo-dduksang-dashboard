@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-08",
+  "day_pillar": "계미일 (검은 양의 날)",
+  "dduksang": {
+    "name": "박동원",
+    "team": "LG",
+    "birth_year": 1990,
+    "chinese": "말띠",
+    "zodiac": "양자리",
+    "ops": 0.77894,
+    "yesterday_ab": 4,
+    "yesterday_hits": 2,
+    "reason": "recent_picked=false, OPS 0.779로 풀 하위, 말-양 방합으로 iljin_strength 강(score 2). 어제 4타 2안타 1홈런으로 강운 후보(score 2) 중 폼이 가장 뜨거움."
+  },
+  "warning": {
+    "name": "최원준",
+    "team": "KT",
+    "birth_year": 1997,
+    "chinese": "소띠",
+    "zodiac": "양자리",
+    "ops": 0.95376,
+    "yesterday_ab": 4,
+    "yesterday_hits": 1,
+    "is_foreign": false,
+    "reason": "OPS 0.954 리그 1위 시즌 상위. 오늘 일진과 상충+천간충으로 iljin_score -3(풀 최저), 어제 4타 1안타로 미지근."
+  },
+  "post_text": "오늘의 비더레 픽은 LG 박동원입니다.\n\n계미일(癸未), 검은 양의 날이지요. 말과 양이 방합으로 이어지니, 90년 말띠 박동원에게 오늘 일진의 흐름이 닿아 있습니다. 어제 홈런을 곁들인 두 개의 안타 — 방망이는 이미 제 온도를 찾았습니다. 기운이 여기 머물러 있으니, 오늘은 믿어볼 자리입니다.\n\n반면 KT 최원준은 97년 소띠, 오늘 양(未)과 상충의 자리입니다. 천간마저 어긋나 기운이 두 겹으로 갈리는 날이니, 기록은 뜨거워도 운은 식어 있습니다.\n\n어제 이우성의 방망이는 잠잠했어도, 오늘 일진이 점지한 이름은 박동원입니다."
+}
