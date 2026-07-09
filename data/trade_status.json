@@ -1,8 +1,32 @@
 {
-  "date": "2026-07-09",
+  "date": "2026-07-10",
   "page_count": 5,
   "row_count": 100,
   "rows": [
+    {
+      "date": "2026-07-09",
+      "item": "웨이버",
+      "team": "롯데",
+      "name": "박시영",
+      "position": "투수",
+      "note": ""
+    },
+    {
+      "date": "2026-07-09",
+      "item": "웨이버",
+      "team": "롯데",
+      "name": "최항",
+      "position": "내야수",
+      "note": ""
+    },
+    {
+      "date": "2026-07-09",
+      "item": "자유계약선수",
+      "team": "두산",
+      "name": "플렉센",
+      "position": "투수",
+      "note": ""
+    },
     {
       "date": "2026-07-07",
       "item": "경조휴가",
@@ -140,24 +164,24 @@
       "note": "부상 대체 외국인 선수 → 소속선수 전환"
     },
     {
-      "date": "2026-07-02",
-      "item": "등번호 변경",
-      "team": "삼성",
-      "name": "김백산",
-      "position": "투수",
-      "note": "113→63"
-    },
-    {
-      "date": "2026-07-02",
-      "item": "등번호 변경",
-      "team": "KIA",
-      "name": "권다결",
-      "position": "포수",
-      "note": "103→24"
-    },
-    {
-      "date": "2026-07-02",
+      "date": "2026-07-09",
       "item": "웨이버",
+      "team": "롯데",
+      "name": "박시영",
+      "position": "투수",
+      "note": ""
+    },
+    {
+      "date": "2026-07-09",
+      "item": "웨이버",
+      "team": "롯데",
+      "name": "최항",
+      "position": "내야수",
+      "note": ""
+    },
+    {
+      "date": "2026-07-09",
+      "item": "자유계약선수",
       "team": "두산",
       "name": "플렉센",
       "position": "투수",
@@ -778,33 +802,30 @@
       "name": "원성준",
       "position": "외야수",
       "note": "육성선수 말소"
-    },
-    {
-      "date": "2026-06-13",
-      "item": "자유계약선수",
-      "team": "SSG",
-      "name": "화이트",
-      "position": "투수",
-      "note": ""
-    },
-    {
-      "date": "2026-06-13",
-      "item": "자유계약선수",
-      "team": "KIA",
-      "name": "아데를린",
-      "position": "내야수",
-      "note": ""
-    },
-    {
-      "date": "2026-06-12",
-      "item": "치료·재활명단",
-      "team": "KIA",
-      "name": "이준영",
-      "position": "투수",
-      "note": "15일"
     }
   ],
   "status": {
+    "박시영": {
+      "status": "released",
+      "date": "2026-07-09",
+      "item": "웨이버",
+      "team": "롯데",
+      "note": ""
+    },
+    "최항": {
+      "status": "released",
+      "date": "2026-07-09",
+      "item": "웨이버",
+      "team": "롯데",
+      "note": ""
+    },
+    "플렉센": {
+      "status": "released",
+      "date": "2026-07-09",
+      "item": "자유계약선수",
+      "team": "두산",
+      "note": ""
+    },
     "배찬승": {
       "status": "injured",
       "date": "2026-07-07",
@@ -888,13 +909,6 @@
       "item": "소속선수 추가 등록",
       "team": "두산",
       "note": "부상 대체 외국인 선수 → 소속선수 전환"
-    },
-    "플렉센": {
-      "status": "released",
-      "date": "2026-07-02",
-      "item": "웨이버",
-      "team": "두산",
-      "note": ""
     },
     "장찬희": {
       "status": "injured",
@@ -1105,27 +1119,6 @@
       "item": "소속선수 추가 등록",
       "team": "키움",
       "note": "육성선수 말소"
-    },
-    "화이트": {
-      "status": "released",
-      "date": "2026-06-13",
-      "item": "자유계약선수",
-      "team": "SSG",
-      "note": ""
-    },
-    "아데를린": {
-      "status": "released",
-      "date": "2026-06-13",
-      "item": "자유계약선수",
-      "team": "KIA",
-      "note": ""
-    },
-    "이준영": {
-      "status": "injured_long",
-      "date": "2026-06-12",
-      "item": "치료·재활명단",
-      "team": "KIA",
-      "note": "15일"
     }
   }
 }
