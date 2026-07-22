@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-22",
+  "day_pillar": "정유일 (붉은 닭의 날)",
+  "dduksang": {
+    "name": "김호령",
+    "team": "KIA",
+    "birth_year": 1992,
+    "chinese": "원숭이띠",
+    "zodiac": "황소자리",
+    "ops": 0.77221,
+    "yesterday_ab": 0,
+    "yesterday_hits": 0,
+    "reason": "방합+천간합으로 iljin_score=3(풀 최고), OPS 하위풀(0.772), recent_picked=false"
+  },
+  "warning": {
+    "name": "최정",
+    "team": "SSG",
+    "birth_year": 1987,
+    "chinese": "토끼띠",
+    "zodiac": "물고기자리",
+    "ops": 1.01241,
+    "yesterday_ab": 0,
+    "yesterday_hits": 0,
+    "is_foreign": false,
+    "reason": "OPS 시즌 최상위(1.012), 상충 iljin_score=-2"
+  },
+  "post_text": "오늘의 비더레 픽은 KIA 김호령입니다.\n\n정유일(丁酉), 붉은 닭이 하늘을 여는 날이지요. 92년 원숭이띠는 닭과 방합으로 이어지고, 천간합의 보강까지 얹혀 일진의 흐름이 가장 곧게 열린 자리입니다. 방망이보다 일진이 먼저 답을 내는 날입니다. 거스를 자리가 아니지요.\n\n반면 SSG 최정은 87년 토끼띠 — 닭과 상충(相沖)의 자리에 섰습니다. 기록은 뜨거워도 운은 식어 있습니다.\n\n어제 김민석이 두 개의 안타로 흐름을 이었듯, 오늘 일진이 가리킨 이름은 김호령입니다."
+}
