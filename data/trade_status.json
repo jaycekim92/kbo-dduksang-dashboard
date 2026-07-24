@@ -1,8 +1,24 @@
 {
-  "date": "2026-07-24",
+  "date": "2026-07-25",
   "page_count": 5,
   "row_count": 100,
   "rows": [
+    {
+      "date": "2026-07-24",
+      "item": "트레이드",
+      "team": "한화",
+      "name": "이형범",
+      "position": "투수",
+      "note": "KIA→한화"
+    },
+    {
+      "date": "2026-07-24",
+      "item": "트레이드",
+      "team": "KIA",
+      "name": "하주석",
+      "position": "내야수",
+      "note": "한화→KIA"
+    },
     {
       "date": "2026-07-21",
       "item": "군보류 자유계약선수",
@@ -148,20 +164,20 @@
       "note": "131→6"
     },
     {
-      "date": "2026-07-16",
-      "item": "등번호 변경",
-      "team": "두산",
-      "name": "손아섭",
-      "position": "외야수",
-      "note": "8→24"
+      "date": "2026-07-24",
+      "item": "트레이드",
+      "team": "한화",
+      "name": "이형범",
+      "position": "투수",
+      "note": "KIA→한화"
     },
     {
-      "date": "2026-07-16",
-      "item": "자유계약선수",
-      "team": "롯데",
-      "name": "박시영",
-      "position": "투수",
-      "note": ""
+      "date": "2026-07-24",
+      "item": "트레이드",
+      "team": "KIA",
+      "name": "하주석",
+      "position": "내야수",
+      "note": "한화→KIA"
     },
     {
       "date": "2026-07-21",
@@ -786,25 +802,23 @@
       "name": "오명진",
       "position": "내야수",
       "note": "10일"
-    },
-    {
-      "date": "2026-06-27",
-      "item": "부상자 명단",
-      "team": "키움",
-      "name": "김성진",
-      "position": "투수",
-      "note": "10일"
-    },
-    {
-      "date": "2026-06-27",
-      "item": "웨이버",
-      "team": "NC",
-      "name": "데이비슨",
-      "position": "내야수",
-      "note": ""
     }
   ],
   "status": {
+    "이형범": {
+      "status": "transferred",
+      "date": "2026-07-24",
+      "item": "트레이드",
+      "team": "한화",
+      "note": "KIA→한화"
+    },
+    "하주석": {
+      "status": "transferred",
+      "date": "2026-07-24",
+      "item": "트레이드",
+      "team": "KIA",
+      "note": "한화→KIA"
+    },
     "이선우": {
       "status": "military",
       "date": "2026-07-21",
