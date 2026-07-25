@@ -1,8 +1,16 @@
 {
-  "date": "2026-07-25",
+  "date": "2026-07-26",
   "page_count": 5,
   "row_count": 100,
   "rows": [
+    {
+      "date": "2026-07-25",
+      "item": "자유계약선수",
+      "team": "KT",
+      "name": "보쉴리",
+      "position": "투수",
+      "note": ""
+    },
     {
       "date": "2026-07-24",
       "item": "트레이드",
@@ -156,12 +164,12 @@
       "note": "육성선수 말소"
     },
     {
-      "date": "2026-07-16",
-      "item": "등번호 변경",
-      "team": "KIA",
-      "name": "엄준현",
-      "position": "내야수",
-      "note": "131→6"
+      "date": "2026-07-25",
+      "item": "자유계약선수",
+      "team": "KT",
+      "name": "보쉴리",
+      "position": "투수",
+      "note": ""
     },
     {
       "date": "2026-07-24",
@@ -794,17 +802,16 @@
       "name": "장성우",
       "position": "포수",
       "note": "10일"
-    },
-    {
-      "date": "2026-06-27",
-      "item": "부상자 명단",
-      "team": "두산",
-      "name": "오명진",
-      "position": "내야수",
-      "note": "10일"
     }
   ],
   "status": {
+    "보쉴리": {
+      "status": "released",
+      "date": "2026-07-25",
+      "item": "자유계약선수",
+      "team": "KT",
+      "note": ""
+    },
     "이형범": {
       "status": "transferred",
       "date": "2026-07-24",
@@ -874,13 +881,6 @@
       "item": "소속선수 추가 등록",
       "team": "KT",
       "note": "부상 대체 외국인 선수 → 소속선수 전환"
-    },
-    "보쉴리": {
-      "status": "released",
-      "date": "2026-07-18",
-      "item": "웨이버",
-      "team": "KT",
-      "note": ""
     },
     "김상준": {
       "status": "injured",
