@@ -1,8 +1,24 @@
 {
-  "date": "2026-08-07",
+  "date": "2026-08-08",
   "page_count": 5,
   "row_count": 100,
   "rows": [
+    {
+      "date": "2026-08-07",
+      "item": "소속선수 추가 등록",
+      "team": "KT",
+      "name": "대니엘",
+      "position": "투수",
+      "note": ""
+    },
+    {
+      "date": "2026-08-07",
+      "item": "웨이버",
+      "team": "삼성",
+      "name": "미야지",
+      "position": "투수",
+      "note": ""
+    },
     {
       "date": "2026-08-06",
       "item": "자유계약선수",
@@ -10,6 +26,22 @@
       "name": "사우어",
       "position": "투수",
       "note": ""
+    },
+    {
+      "date": "2026-08-05",
+      "item": "치료·재활명단",
+      "team": "KIA",
+      "name": "박민",
+      "position": "내야수",
+      "note": "10일"
+    },
+    {
+      "date": "2026-08-05",
+      "item": "치료·재활명단",
+      "team": "키움",
+      "name": "하영민",
+      "position": "투수",
+      "note": "10일"
     },
     {
       "date": "2026-08-04",
@@ -132,36 +164,20 @@
       "note": "10일"
     },
     {
-      "date": "2026-07-29",
-      "item": "부상자 명단",
-      "team": "KT",
-      "name": "장성우",
-      "position": "포수",
-      "note": "10일"
-    },
-    {
-      "date": "2026-07-29",
+      "date": "2026-08-07",
       "item": "소속선수 추가 등록",
-      "team": "LG",
-      "name": "카라스코",
+      "team": "KT",
+      "name": "대니엘",
       "position": "투수",
       "note": ""
     },
     {
-      "date": "2026-07-28",
-      "item": "부상자 명단",
-      "team": "한화",
-      "name": "오재원",
-      "position": "외야수",
-      "note": "15일"
-    },
-    {
-      "date": "2026-07-28",
-      "item": "등번호 변경",
-      "team": "LG",
-      "name": "박준성",
+      "date": "2026-08-07",
+      "item": "웨이버",
+      "team": "삼성",
+      "name": "미야지",
       "position": "투수",
-      "note": "59→60"
+      "note": ""
     },
     {
       "date": "2026-08-06",
@@ -170,6 +186,22 @@
       "name": "사우어",
       "position": "투수",
       "note": ""
+    },
+    {
+      "date": "2026-08-05",
+      "item": "치료·재활명단",
+      "team": "KIA",
+      "name": "박민",
+      "position": "내야수",
+      "note": "10일"
+    },
+    {
+      "date": "2026-08-05",
+      "item": "치료·재활명단",
+      "team": "키움",
+      "name": "하영민",
+      "position": "투수",
+      "note": "10일"
     },
     {
       "date": "2026-08-04",
@@ -770,47 +802,43 @@
       "name": "오명진",
       "position": "내야수",
       "note": "10일"
-    },
-    {
-      "date": "2026-07-07",
-      "item": "부상자 명단",
-      "team": "키움",
-      "name": "김성진",
-      "position": "투수",
-      "note": "10일"
-    },
-    {
-      "date": "2026-07-07",
-      "item": "군보류 자유계약선수",
-      "team": "한화",
-      "name": "남지민",
-      "position": "투수",
-      "note": ""
-    },
-    {
-      "date": "2026-07-07",
-      "item": "트레이드(웨이버)",
-      "team": "KT",
-      "name": "이정범",
-      "position": "외야수",
-      "note": "SSG→KT"
-    },
-    {
-      "date": "2026-07-07",
-      "item": "자유계약선수",
-      "team": "SSG",
-      "name": "하재훈",
-      "position": "외야수",
-      "note": ""
     }
   ],
   "status": {
+    "대니엘": {
+      "status": "registered",
+      "date": "2026-08-07",
+      "item": "소속선수 추가 등록",
+      "team": "KT",
+      "note": ""
+    },
+    "미야지": {
+      "status": "released",
+      "date": "2026-08-07",
+      "item": "웨이버",
+      "team": "삼성",
+      "note": ""
+    },
     "사우어": {
       "status": "released",
       "date": "2026-08-06",
       "item": "자유계약선수",
       "team": "KT",
       "note": ""
+    },
+    "박민": {
+      "status": "injured_long",
+      "date": "2026-08-05",
+      "item": "치료·재활명단",
+      "team": "KIA",
+      "note": "10일"
+    },
+    "하영민": {
+      "status": "injured_long",
+      "date": "2026-08-05",
+      "item": "치료·재활명단",
+      "team": "키움",
+      "note": "10일"
     },
     "김한결": {
       "status": "registered",
@@ -908,13 +936,6 @@
       "date": "2026-07-26",
       "item": "부상자 명단",
       "team": "LG",
-      "note": "10일"
-    },
-    "박민": {
-      "status": "injured",
-      "date": "2026-07-26",
-      "item": "부상자 명단",
-      "team": "KIA",
       "note": "10일"
     },
     "짐머맨": {
@@ -1168,27 +1189,6 @@
       "item": "부상자 명단",
       "team": "두산",
       "note": "10일"
-    },
-    "김성진": {
-      "status": "injured",
-      "date": "2026-07-07",
-      "item": "부상자 명단",
-      "team": "키움",
-      "note": "10일"
-    },
-    "남지민": {
-      "status": "military",
-      "date": "2026-07-07",
-      "item": "군보류 자유계약선수",
-      "team": "한화",
-      "note": ""
-    },
-    "하재훈": {
-      "status": "released",
-      "date": "2026-07-07",
-      "item": "자유계약선수",
-      "team": "SSG",
-      "note": ""
     }
   }
 }
