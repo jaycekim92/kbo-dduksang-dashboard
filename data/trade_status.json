@@ -1,8 +1,16 @@
 {
-  "date": "2026-08-06",
+  "date": "2026-08-07",
   "page_count": 5,
   "row_count": 100,
   "rows": [
+    {
+      "date": "2026-08-06",
+      "item": "자유계약선수",
+      "team": "KT",
+      "name": "사우어",
+      "position": "투수",
+      "note": ""
+    },
     {
       "date": "2026-08-04",
       "item": "소속선수 추가 등록",
@@ -156,12 +164,12 @@
       "note": "59→60"
     },
     {
-      "date": "2026-07-28",
-      "item": "등번호 변경",
-      "team": "LG",
-      "name": "서영준",
-      "position": "외야수",
-      "note": "60→87"
+      "date": "2026-08-06",
+      "item": "자유계약선수",
+      "team": "KT",
+      "name": "사우어",
+      "position": "투수",
+      "note": ""
     },
     {
       "date": "2026-08-04",
@@ -794,17 +802,16 @@
       "name": "하재훈",
       "position": "외야수",
       "note": ""
-    },
-    {
-      "date": "2026-07-06",
-      "item": "자유계약선수",
-      "team": "두산",
-      "name": "카메론",
-      "position": "외야수",
-      "note": ""
     }
   ],
   "status": {
+    "사우어": {
+      "status": "released",
+      "date": "2026-08-06",
+      "item": "자유계약선수",
+      "team": "KT",
+      "note": ""
+    },
     "김한결": {
       "status": "registered",
       "date": "2026-08-04",
@@ -860,13 +867,6 @@
       "item": "치료·재활명단",
       "team": "KIA",
       "note": "94일"
-    },
-    "사우어": {
-      "status": "released",
-      "date": "2026-07-30",
-      "item": "웨이버",
-      "team": "KT",
-      "note": ""
     },
     "최원태": {
       "status": "injured",
@@ -1188,13 +1188,6 @@
       "date": "2026-07-07",
       "item": "자유계약선수",
       "team": "SSG",
-      "note": ""
-    },
-    "카메론": {
-      "status": "released",
-      "date": "2026-07-06",
-      "item": "자유계약선수",
-      "team": "두산",
       "note": ""
     }
   }
